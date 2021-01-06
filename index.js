@@ -17,7 +17,7 @@ toolkit.addEventListener('click', (evt) => {
     const { type } = btn.dataset;
     document.execCommand('formatBlock', false, type);
     let focusedNode = window.getSelection().focusNode;
-    if (focusedNode.nodeType !== 1) {
+    if (focusedNode.nodeType !== Node.ELEMENT_NODE) {
       focusedNode = focusedNode.parentNode;
     }
     focusedNode.setAttribute('style', getHeaderStyle(type));
